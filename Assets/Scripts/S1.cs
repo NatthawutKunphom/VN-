@@ -35,7 +35,7 @@ public class S1 : MonoBehaviour
         string[] tmp = new string[2];
         tmp = line[currentLine].Split(":");
         int cNumber = int.Parse(tmp[0]);
-        string txt = ";";
+        string txt = "";
         if (cNumber > 0) txt = names[cNumber] + ": "+ tmp[1];
         else txt = tmp[1];
         textDisplay.text = txt;
