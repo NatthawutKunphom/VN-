@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8828813a61492ba42ba98d27442d65cd
+guid: e240a2f76222a6d45bdd4e040f470e0f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - TH SarabunPSK
+  - MN CHOCOLATE
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

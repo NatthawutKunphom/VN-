@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a76f2acd36ccd2f4abbd10e828721fe9
+guid: 5ebbc7935bbfffd4ab21ae1cd2881586
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,8 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Tobie
-  fallbackFontReferences: []
+  - MN CHOCOLATE
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e240a2f76222a6d45bdd4e040f470e0f, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
