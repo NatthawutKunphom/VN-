@@ -10,14 +10,17 @@ public class S1 : MonoBehaviour
     string[] names = { "", "Boss" };
     Text textDisplay;
     int currentLine = 0;
+    TW_MultiStrings_Regular tw;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()// awake ทำงานก่อน start
     {
         string allText = textFile.text;
-        line = allText.Split("\n");
+        //line = allText.Split("\n");
         textDisplay = GameObject.Find("Text").GetComponent<Text>();
-        displayText();
+        tw = GameObject.Find("Text").GetComponent<TW_MultiStrings_Regular>();
+        tw.MultiStrings = allText.Split("\n");
+        textDisplay.text = tw.MultiStrings[0]; //นำประโยคพูดว่าแสดงใน tw.MultiStrings
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class S1 : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
         currentLine++;
-        displayText();
+        tw.NextString(); // คลิกเมาส์หนึ่งจะแสดงข้อความถัดไปใน array
         }
         
     }
