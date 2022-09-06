@@ -11,16 +11,25 @@ public class S1 : MonoBehaviour
     Text textDisplay;
     int currentLine = 0;
     TW_MultiStrings_Regular tw;
+    FadeCanvas fadeCanvas;
+
+
 
     // Start is called before the first frame update
+    
     void Awake()// awake ทำงานก่อน start
     {
         string allText = textFile.text;
         //line = allText.Split("\n");
         textDisplay = GameObject.Find("Text").GetComponent<Text>();
         tw = GameObject.Find("Text").GetComponent<TW_MultiStrings_Regular>();
+        fadeCanvas = GameObject.Find("Canvas").GetComponent<FadeCanvas>();
         tw.MultiStrings = allText.Split("\n");
         textDisplay.text = tw.MultiStrings[0]; //นำประโยคพูดว่าแสดงใน tw.MultiStrings
+    }
+    void Start()
+    {
+        fadeCanvas.ShowUI();
     }
 
     // Update is called once per frame
@@ -33,14 +42,13 @@ public class S1 : MonoBehaviour
             {
                 if (SceneManager.GetActiveScene().name.CompareTo("S1") == 0)
                 {
-                    SceneManager.LoadScene("S2");
+                    fadeCanvas.HideUI();                    
                 }
-
             }
-            else tw.NextString(); // คลิกเมาส์หนึ่งจะแสดงข้อความถัดไปใน array
+            else tw.NextString();
         }
-        
     }
+
     void displayText()
     {
         string[] tmp = new string[2];
