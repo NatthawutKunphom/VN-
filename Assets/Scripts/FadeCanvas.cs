@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FadeCanvas : MonoBehaviour
-{       
+{
     public CanvasGroup myUIGroup;
     bool fadeIn = false;
     bool fadeOut = false;
@@ -13,42 +13,38 @@ public class FadeCanvas : MonoBehaviour
     {
         fadeIn = true;
     }
+
     public void HideUI()
     {
-        fadeIn = true;
+        fadeOut = true;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    // Update is called once per frame
+
     void Update()
     {
         if (fadeIn)
         {
-            if(myUIGroup.alpha < 1 )
+            if (myUIGroup.alpha < 1)
             {
                 myUIGroup.alpha += Time.deltaTime / 1.5f;
-                if(myUIGroup.alpha >= 1 )
+                if (myUIGroup.alpha >= 1)
                 {
                     fadeIn = false;
                 }
-            }
+            } 
         }
+
         if (fadeOut)
         {
-            if(myUIGroup.alpha > 0 )
+            if (myUIGroup.alpha > 0)
             {
-                myUIGroup.alpha += Time.deltaTime / 2f;
-                if(myUIGroup.alpha == 0 )
+                myUIGroup.alpha -= Time.deltaTime / 2f;
+                if (myUIGroup.alpha == 0)
                 {
                     fadeOut = false;
                     SceneManager.LoadScene("S2");
                 }
             }
         }
+
     }
-        
-   
 }
