@@ -40,7 +40,7 @@ public class S2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentLine == 3) showChoices = true;
+        if (currentLine == 2) showChoices = true;
         if (Input.GetMouseButtonDown(0) && showChoices == false)
         {
             currentLine++;
@@ -58,10 +58,13 @@ public class S2 : MonoBehaviour
                 tw.NextString();
                 
             }
+            
         }
         if (showChoices == true)
         {
             choicesPanel.SetActive(true);
+            showChoices = false;
+            currentLine++;
         }
     }
 
@@ -74,5 +77,18 @@ public class S2 : MonoBehaviour
         Textname.text = names[cNumber];
         if (currentLine == 0) textDisplay.text = tmp[1];
     }
-    
+
+    public void Ans1()
+    {
+        choicesPanel.SetActive(false);
+        tw.NextString();
+
+    }
+
+    public void Ans2()
+    {
+        choicesPanel.SetActive(false);
+        currentLine++;
+    }
+
 }
